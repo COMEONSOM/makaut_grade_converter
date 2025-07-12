@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #0056b3;
+  --primary-hover: #004080;
+  --accent-color: #007b5e;
+  --danger-color: #d9534f;
+  --danger-hover: #c9302c;
+  --light-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --footer-bg: #f9fafb;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #f5f7fa, #e4ebf5);
+  margin: 0;
+  color: var(--text-color);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+/* ───────── Header ───────── */
+.site-header {
+  background: #ffffff;
+  width: 100%;
+  max-height: 120px;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.site-logo {
+  max-width: 100px;
+  margin: 10px;
+  padding: 10px;
+  object-fit: contain;
+}
+
+#showCalcBtn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#showCalcBtn:hover {
+  background: var(--primary-hover);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 20px;
+}
+
+h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 15px;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+}
+
+.output {
+  margin-top: 8px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* 📖 Fullscreen Calculation */
+#calcScreen {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: white;
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+}
+
+#calcScreen.show {
+  display: flex;
+}
+
+#backBtn {
+  align-self: flex-start;
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#backBtn:hover {
+  background: var(--danger-hover);
+}
+
+.calcContent img {
+  max-width: 100%;
+  margin-top: 15px;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+/* ───────── Footer ───────── */
+.site-footer {
+  background: var(--footer-bg);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #ddd;
+}
