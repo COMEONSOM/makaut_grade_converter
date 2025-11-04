@@ -125,12 +125,15 @@ function updateYGPAFields() {
 
 // === Fullscreen Toggle ===
 function showCalculations() {
-  calcScreen.classList.add("show");
+  document.getElementById("calcScreen").classList.add("show");
+  document.querySelector(".top-bar").style.display = "none"; // HIDE BUTTON
 }
 
 function hideCalculations() {
-  calcScreen.classList.remove("show");
+  document.getElementById("calcScreen").classList.remove("show");
+  document.querySelector(".top-bar").style.display = "flex"; // SHOW AGAIN
 }
+
 
 // === Initialize ===
 document.addEventListener("DOMContentLoaded", () => {

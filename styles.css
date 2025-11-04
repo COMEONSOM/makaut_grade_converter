@@ -19,7 +19,7 @@
   --clr-primary: #000082;
   --clr-text: #111827;
   --clr-white: #ffffff;
-  --clr-overlay: rgba(15, 23, 42, 0.95);
+  --clr-overlay: rgba(15, 23, 42, 0.881);
   --clr-danger: #e63946;
 
   /* SHADOWS & RADIUS */
@@ -116,25 +116,42 @@ body {
 
 /* ===== TOP BUTTON BAR ===== */
 .top-bar {
+  position: absolute;               /* STAYS FIXED INSIDE HEADER */
+  top: 50%;                         /* CENTER VERTICALLY */
+  right: 2rem;                      /* ALIGN RIGHT SIDE */
+  transform: translateY(-50%);      /* PERFECT VERTICAL CENTER */
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex: 1;
-  min-width: fit-content;
+  justify-content: center;
+  z-index: 10;
 }
+
 .top-bar button {
   background: #00b837;
   color: var(--clr-white);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   border-radius: var(--radius-md);
-  padding: 0.6rem 1.4rem;
+  padding: 0.7rem 1.5rem;
   box-shadow: var(--shadow);
+  transition: all 0.3s ease;
 }
+
 .top-bar button:hover {
   background: #e2eb35;
-  color: #000000;
+  color: #000;
   transform: translateY(-2px);
+}
+
+/* RESPONSIVE FIXES (KEEP BUTTON STABLE ON ALL DEVICES) */
+@media (max-width: 767px) {
+  .top-bar {
+    right: 1rem;
+  }
+  .top-bar button {
+    font-size: 0.75rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 /* ============================================================
@@ -176,7 +193,7 @@ body {
   color: #000000;
   padding: 0.8rem 1.4rem;
   border-radius: var(--radius-md);
-  font-weight: 700;
+  font-weight: 500;
 }
 #backBtn:hover {
   background: var(--clr-success);
@@ -310,8 +327,7 @@ button:hover {
     white-space: normal;
   }
   .top-bar {
-    align-self: flex-end;
-    margin-top: 0.6rem;
+    margin-top: 0;
   }
   .container {
     padding: 1rem;
@@ -361,9 +377,6 @@ button:hover {
     width: 140px;
     height: auto;
   }
-  .top-bar {
-    justify-content: flex-end;
-  }
 }
 /* ===== TV / ULTRA-WIDE SCREENS ===== */
 @media (min-width: 1600px) {
@@ -402,4 +415,9 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* ===== HIDE TOP BAR WHEN CALC SCREEN IS ACTIVE ===== */
+#calcScreen.show + .top-bar,
+#calcScreen.show ~ .top-bar {
+  display: none !important;
 }
