@@ -11,14 +11,27 @@
   <!-- ========== Header ========== -->
   <header class="site-header">
     <div class="logo-wrapper">
-      <img src="./assets/ulvoxo-updates-logo.png" alt="ULVOXO UPDATE Logo" class="site-logo" />
+      <img src="./assets/openroot-withoutbg.png" alt="company-logo" class="site-logo" />
+      <img src="./assets/Maulana_Abul_Kalam_Azad_University_of_Technology_Logo.svg" alt="university-logo" class="uni-logo" />
+      <h1> MAKAUT GPA & % Calculator</h1>
+    </div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <button id="showCalcBtn" onclick="showCalculations()">📖 Show Calculations</button>
+    </div>
+
+    <!-- 📖 Fullscreen Calculation Screen -->
+    <div id="calcScreen">
+      <button id="backBtn" onclick="hideCalculations()">⬅ Back</button>
+      <div class="calcContent">
+        <h1>Makaut Calculation Rules</h1>
+        <img src="./assets/calculation.png" alt="Calculation Screenshot">
+      </div>
     </div>
   </header>
 
   <!-- Main Tools -->
   <div id="mainTools" class="container">
-    <h1>🎓 MAKAUT GPA & % Calculator</h1>
-
     <!-- SGPA to Percentage -->
     <section class="card">
       <h2>SGPA ➜ %</h2>
@@ -66,23 +79,9 @@
     </section>
   </div>
 
-  <!-- Bottom Bar -->
-  <div class="top-bar">
-    <button id="showCalcBtn" onclick="showCalculations()">📖 Show Calculations</button>
-  </div>
-
-  <!-- 📖 Fullscreen Calculation Screen -->
-  <div id="calcScreen">
-    <button id="backBtn" onclick="hideCalculations()">⬅ Back</button>
-    <div class="calcContent">
-      <h1>Makaut Calculation Rules</h1>
-      <img src="./assets/calculation.png" alt="Calculation Screenshot">
-    </div>
-  </div>
-
   <!-- ========== Footer ========== -->
   <footer class="site-footer">
-    <p>&copy; 2025 ULVOXO. All rights reserved.</p>
+    <p>&copy; 2025 OPENROOT. All rights reserved.</p>
     <p>Made with ❤️ for students.</p>
   </footer>
 
